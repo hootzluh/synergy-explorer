@@ -1,0 +1,96 @@
+/* 🌟 NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+}
+
+/* 🏷️ TITLE & LIVE DATA BOXES */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.navbar-info {
+  display: flex;
+  gap: 10px;
+}
+
+/* 📊 LIVE DATA BOXES */
+.info-box {
+  width: 100px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🌀 HOVER EFFECT FOR LIVE DATA */
+.info-box:hover {
+  border-image-source: var(--gradient);
+  border-image-slice: 1;
+  box-shadow: 0px 0px 6px 3px rgba(255, 0, 0, 0.3),
+    0px 0px 10px 5px rgba(255, 111, 0, 0.3),
+    0px 0px 14px 7px rgba(241, 255, 0, 0.3),
+    0px 0px 18px 9px rgba(54, 242, 0, 0.3),
+    0px 0px 22px 11px rgba(21, 0, 255, 0.3),
+    0px 0px 26px 13px rgba(145, 0, 255, 0.3);
+}
+
+/* 🔗 NAV LINKS */
+.navbar-links {
+  display: flex;
+  gap: 60px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* ✨ HOVER EFFECT FOR NAV LINKS */
+.navbar-links a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+  border-image-source: var(--gradient);
+  border-image-slice: 1;
+  text-shadow: 0px 0px 4px rgba(255, 0, 0, 0.3),
+    0px 0px 8px rgba(255, 111, 0, 0.3),
+    0px 0px 12px rgba(241, 255, 0, 0.3),
+    0px 0px 16px rgba(54, 242, 0, 0.3),
+    0px 0px 20px rgba(21, 0, 255, 0.3),
+    0px 0px 24px rgba(145, 0, 255, 0.3);
+}
+
+/* 🖱️ CLICK EFFECT FOR NAV LINKS */
+.navbar-links a:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
