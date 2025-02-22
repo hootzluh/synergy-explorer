@@ -12,6 +12,7 @@ tokio = { version = "1", features = ["full"] }
 dotenv = "0.15"
 chrono = { version = "0.4", features = ["serde"] }  # ✅ Ensure chrono is included
 time = { version = "0.3.37", features = ["serde"] }
+actix-cors = "0.7.0"
 
 [[bin]]
 name = "backend"

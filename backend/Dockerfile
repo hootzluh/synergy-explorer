@@ -4,6 +4,8 @@ FROM rust:latest AS builder
 # Set working directory
 WORKDIR /app
 
+ENV DATABASE_URL="postgresql://synergy_user:synergy_password@postgres:5432/synergy_explorer"
+
 # Copy source code
 COPY . .
 
@@ -27,5 +29,3 @@ EXPOSE 8000
 
 # Run the application
 CMD ["/app/backend"]
-
-ENV DATABASE_URL="postgresql://synergy_user:synergy_password@postgres:5432/synergy_explorer"
