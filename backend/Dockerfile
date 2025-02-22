@@ -1,31 +1,31 @@
-# Use an official Rust image as a base
-FROM rust:latest
+# Use Rust as the base image
+FROM rust:latest AS builder
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Install required dependencies
-RUN apt-get update && apt-get install -y \
-  libpq-dev \
-  && rm -rf /var/lib/apt/lists/*
-
-# Copy Cargo files separately to optimize caching
-COPY Cargo.toml Cargo.lock ./
-
-# Create an empty lib directory for cargo check
-RUN mkdir -p src && echo "fn main() {}" > src/main.rs
-
-# Build dependencies first for caching
-RUN cargo build --release || true
-
-# Copy the actual project files
+# Copy source code
 COPY . .
 
-# Build the actual project
+# Build the release binary
 RUN cargo build --release
 
-# Expose port for API (adjust as necessary)
+# Use a minimal base image for running the binary
+FROM debian:bullseye-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy the compiled binary from the previous stage
+COPY --from=builder /app/target/release/backend /app/backend
+
+# Make sure it has execution permissions
+RUN chmod +x /app/backend
+
+# Expose port
 EXPOSE 8000
 
 # Run the application
-CMD ["./target/release/synergy-explorer"]
+CMD ["/app/backend"]
+
+ENV DATABASE_URL="postgresql://synergy_user:synergy_password@postgres:5432/synergy_explorer"
