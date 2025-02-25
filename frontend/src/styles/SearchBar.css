@@ -6,11 +6,16 @@
   position: relative;
   width: 100%;
   background: rgba(20, 20, 50, 0.8);
-  border: 1px solid rgba(0, 162, 255, 0.6);
+  border: 2.5px solid rgba(0, 162, 255, 0.6);
   border: 1px solid #ccc;
   border-radius: 25px;
   padding: 8px 12px;
   background: white;
+}
+
+.search-bar:focus-within {
+  border: 2.5px solid #8fd6ff;
+  transition: all 0.3s ease-in-out;
 }
 
 .search-bar input {
@@ -23,16 +28,19 @@
 }
 
 .search-bar .search-icon {
-  color: #00A2FF !important;
   font-size: 18px;
   transition: all 0.3s ease-in-out;
+  color: #FFF;
 }
 
 .search-bar .search-icon:hover {
   transform: scale(1.4);
-  text-shadow: 0px 0px 6px 10px rgba(0, 162, 255, 1);
+  filter: drop-shadow(0px 0px 10px rgba(0, 162, 255, 0.8));
+  transition: all 0.3s ease;
 }
 
-.search-bar .search-icon.shrink {
-  transform: scale(0.8);
+.search-bar .search-icon:active {
+  transform: scale(0.9);
+  color: #00A2FF;
+  transition: all 0.3s ease;
 }

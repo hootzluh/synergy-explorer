@@ -1,5 +1,5 @@
 import React from "react";
-import "./BlocksTable.css";
+import "../styles/BlocksTable.css";
 
 const BlocksTable: React.FC = () => {
   return (

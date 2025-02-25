@@ -1,33 +1,36 @@
-/* 🌟 NAVBAR */
+/* Navbar */
 .navbar {
+  background: rgba(0, 10, 50, 0.9);
+  /* Dark semi-transparent */
+  padding: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
-  background: rgba(0, 10, 50, 0.9);
-  box-shadow: 0 0 20px rgba(0, 162, 255, 0.6);
+  box-shadow: 0 0 18px 3px rgba(0, 162, 255, 0.6);
+  border-top: 2.5px solid white;
+  border-bottom: 2.5px solid white;
   position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 60px;
+  /* top: 0;
+  z-index: -5454; */
 }
 
 /* 🏷️ TITLE & LIVE DATA BOXES */
 .navbar-left {
   display: flex;
   align-items: center;
+  justify-content: left;
+  gap: 1px;
 }
 
 .navbar-left h1 {
   color: white;
-  font-size: 22px;
+  font-size: 32px;
   font-weight: bold;
-  margin-right: 15px;
 }
 
 .navbar-info {
   display: flex;
-  gap: 10px;
+  gap: 22px;
 }
 
 /* 📊 LIVE DATA BOXES */
@@ -61,20 +64,19 @@
 }
 
 .navbar-logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #00A2FF;
-  text-shadow: 0px 0px 10px rgba(0, 162, 255, 0.8);
+  filter: drop-shadow(0px 0px 10px rgba(0, 162, 255, 0.8));
+  transition: filter 0.3s ease-in-out;
+  width: 70px;
+  height: 70px;
 }
 
 .navbar-links a {
   color: #E0E8FF;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   transition: all 0.3s ease;
   position: relative;
-  padding-bottom: 5px;
 }
 
 /* ✨ HOVER EFFECT FOR NAV LINKS */
@@ -86,5 +88,6 @@
 /* 🖱️ CLICK EFFECT FOR NAV LINKS */
 .navbar-links a:active {
   transform: scale(0.95);
-  transition: transform 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  color: #FFF;
 }

@@ -1,6 +1,6 @@
 // src/components/Marquee.tsx
 import React from "react";
-import "./Marquee.css";
+import "../styles/Marquee.css";
 
 const dummyData = [
   { pair: "BTC/USD", price: "$42,300", change: "+1.2%" },

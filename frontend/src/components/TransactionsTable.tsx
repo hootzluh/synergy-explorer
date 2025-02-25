@@ -1,5 +1,5 @@
 import React from "react";
-import "./TransactionsTable.css";
+import "../styles/TransactionsTable.css";
 
 const TransactionsTable: React.FC = () => {
   return (

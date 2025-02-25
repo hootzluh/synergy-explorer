@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import "./StatsSection.css"; // Make sure to import the CSS file
+import "../styles/StatsSection.css"; // Make sure to import the CSS file
 
 const StatsSection: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);

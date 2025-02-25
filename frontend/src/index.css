@@ -7,6 +7,7 @@
   --text-light: #fff;
   --font-title: 'Inter', sans-serif;
   --font-light: 'Inter', sans-serif;
+  z-index: -9999;
 }
 
 /* 🌆 Background Styling */

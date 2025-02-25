@@ -12,8 +12,8 @@ import "./App.css";
 const App: React.FC = () => {
   return (
     <>
-      <Navbar />
       <Marquee />
+      <Navbar />
       <div className="app-container">
         <div className="main-content">
           <SearchBar />
