@@ -1,4 +1,5 @@
-use actix_web::{web, App, HttpServer};
+use actix_cors::Cors;
+use actix_web::{web, App, HttpServer, middleware::Logger};
 use sqlx::PgPool;
 use std::env;
 
@@ -19,10 +20,18 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(move || {
         App::new()
+            .wrap(
+                Cors::default()
+                    .allowed_origin("http://localhost:3000")
+                    .allowed_methods(vec!["GET", "POST", "PUT", "DELETE"])
+                    .allowed_headers(&[actix_web::http::header::CONTENT_TYPE])
+                    .max_age(3600),
+            )
+            .wrap(Logger::default())
             .app_data(web::Data::new(db_pool.clone()))
-            .configure(routes::configure)
+            .configure(routes::configure) // ✅ Register routes properly
     })
-    .bind("0.0.0.0:8000")?
+    .bind("0.0.0.0:80")?
     .run()
     .await
 }

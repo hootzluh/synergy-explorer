@@ -1,6 +1,7 @@
 /* 📜 Table Styles */
 .table-container {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 255, 0.1);
+  backdrop-filter: blur(3.5px);
   padding: 20px;
   border-radius: 10px;
   width: 100%;
@@ -22,7 +23,7 @@ td {
 }
 
 th {
-  color: #ff0000;
+  color: #509cff;
 }
 
 td {

@@ -11,8 +11,11 @@
 
 /* 🌆 Background Styling */
 body {
-  background: url("/src/assets/circuit.png") repeat, #252525;
-  background-size: auto;
+  background: url("../src/assets/metal.jpg") repeat, #252525;
+  /* background-size: cover; */
+  background-attachment: fixed;
+  /* background-position: center; */
+  background-repeat:repeat;
   position: relative;
   font-family: "Inter", sans-serif;
   margin: 0;
@@ -23,22 +26,16 @@ body {
 }
 
 /* 🔳 Semi-Transparent White Overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  /* 10% transparency */
-  z-index: -1;
 
-  overflow-x: hidden;
-}
 
 h1 {
   color: white;
+}
+
+h2,
+h3 {
+  text-align: left;
+  margin: 2px 8px 18px 8px;
 }
 
 /* 🌌 General Page Layout */
@@ -74,41 +71,8 @@ h1 {
   }
 }
 
-.search-container {
-  position: relative;
-  margin-top: 6px;
-  /* Ensures it appears below navbar */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-}
-
-.search-container input {
-  width: 100%;
-  padding: 8px 40px 8px 15px;
-  /* Space for the icon */
-  font-size: 16px;
-  border-radius: 25px;
-  border: none;
-  background-color: #fff;
-  outline: none;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-/* 🔥 Glow Effect when typing */
-.search-container input:focus {
-  box-shadow: 0px 0px 4px 3px rgba(255, 0, 0, 0.3),
-    0px 0px 8px 5px rgba(255, 111, 0, 0.3),
-    0px 0px 12px 7px rgba(241, 255, 0, 0.3),
-    0px 0px 16px 9px rgba(54, 242, 0, 0.3),
-    0px 0px 20px 11px rgba(21, 0, 255, 0.3),
-    0px 0px 24px 13px rgba(145, 0, 255, 0.3);
-}
-
 /* 🔍 Search Icon Styling */
-.search-container .search-icon {
+.search-bar .search-icon {
   position: absolute;
   right: 32px;
   z-index: 9999;
@@ -124,7 +88,7 @@ h1 {
 
 /* 🟡 Change to gradient on hover */
 /* 🟡 Change to gradient on hover */
-.search-container .search-icon:hover {
+.search-bar .search-icon:hover {
   background: linear-gradient(90deg,
       #ff0000,
       /* Red */
@@ -144,7 +108,7 @@ h1 {
 }
 
 /* 🔄 Click Effect */
-.search-container .search-icon:active {
+.search-bar .search-icon:active {
   transform: scale(0.9);
   /* Shrinks on click */
 }

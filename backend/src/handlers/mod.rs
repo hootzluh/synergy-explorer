@@ -2,6 +2,7 @@ use actix_web::{web, HttpResponse, Responder};
 use sqlx::PgPool;
 
 /// API Route: `/status` - Returns the API health status
+#[allow(dead_code)]
 pub async fn get_status() -> impl Responder {
     HttpResponse::Ok().body("Synergy Explorer API is running")
 }

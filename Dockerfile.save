@@ -1,2 +1,0 @@
-ENV DATABASE_URL="postgresql://synergy_user:synergy_password@postgres:5432/synergy_explorer"
-
