@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
 
-:root {
+#root {
   --gradient: linear-gradient(90deg, #ff00007b, #FF6F007b, #F1FF007b, #36F2007b, #1500FF7b, #9100FF7b);
   --primary-color: #FF6F00;
   --text-dark: #000;
@@ -8,15 +8,23 @@
   --font-title: 'Inter', sans-serif;
   --font-light: 'Inter', sans-serif;
   z-index: -9999;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 /* 🌆 Background Styling */
 body {
   background: url("../src/assets/metal.jpg") repeat, #252525;
-  /* background-size: cover; */
+  background-size: 250px;
   background-attachment: fixed;
-  /* background-position: center; */
-  background-repeat:repeat;
+  background-position: center;
+  background-repeat: repeat;
   position: relative;
   font-family: "Inter", sans-serif;
   margin: 0;
@@ -39,13 +47,20 @@ h3 {
   margin: 2px 8px 18px 8px;
 }
 
+.navs {
+  z-index: 9999;
+  positiob: relative;
+}
+
 /* 🌌 General Page Layout */
 .app-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  /* max-width: 1200px; */
+  margin: 75px 15px 0 280px;
+  padding: 30px 0 30px 30px;
   font-family: "Inter", sans-serif;
   color: white;
+  z-index: -15;
+  position: relative;
 }
 
 /* 🏠 Main Content Centering */
@@ -63,6 +78,7 @@ h3 {
   justify-content: space-between;
   width: 100%;
   gap: 20px;
+
 }
 
 @media (max-width: 900px) {
